@@ -13,27 +13,6 @@ def reverse_dict(input_dict: dict):
         output_dict[v] = k
     return output_dict
 
-# TYPE_TO_INT_MAP = {
-#     "normal": 0,
-#     "fighting": 1,
-#     "flying": 2,
-#     "poison": 3,
-#     "ground": 4,
-#     "rock": 5,
-#     "bug": 6,
-#     "ghost": 7,
-#     "steel": 8,
-#     "fire": 9,
-#     "water": 10,
-#     "grass": 11,
-#     "electric": 12,
-#     "psychic": 13,
-#     "ice": 14,
-#     "dragon": 15,
-#     "dark": 16,
-#     "fairy": 17,
-# }
-
 INT_TO_TYPE_MAP = {
     0: "normal",
     1: "fighting",
@@ -56,19 +35,6 @@ INT_TO_TYPE_MAP = {
 }
 
 TYPE_TO_INT_MAP = reverse_dict(INT_TO_TYPE_MAP)
-
-# COLOR_TO_INT_MAP = {
-#     "black": 0,
-#     "blue": 1,
-#     "brown": 2,
-#     "gray": 3,
-#     "green": 4,
-#     "pink": 5,
-#     "purple": 6,
-#     "red": 7,
-#     "white": 8,
-#     "yellow": 9,
-# }
 
 INT_TO_COLOR_MAP = {
     0: "black",

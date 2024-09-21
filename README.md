@@ -19,7 +19,7 @@ I scraped the dataset from Bulbapedia and the Pokémon API. My dataset creation 
 
 # Demo
 
-This project is hosted as a HuggingFace Space [here](). Below are static examples of Pokémon from the training set, and the outputs from my model.
+This project is hosted as a HuggingFace Space [here](https://huggingface.co/spaces/krchickering/pokemon_generator). Below are static examples of Pokémon from the training set, and the outputs from my model.
 
 ![sample outputs](/resources/sample_output.png)
 
