@@ -3,8 +3,8 @@ title: Pokémon Sprite Generator
 emoji: frog
 colorFrom: red
 colorTo: blue
-sdk: {{sdk}}
-sdk_version: "{{sdkVersion}}"
+sdk: "gradio"
+sdk_version: "4.43.0"
 app_file: app.py
 pinned: false
 ---
