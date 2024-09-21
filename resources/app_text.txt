@@ -1,0 +1,9 @@
+Provide the conditional inputs for the Pokémon generative diffusion model.
+
+The CFG parameter controls how much [classifier-free guidence](https://arxiv.org/abs/2207.12598) the final inference step takes. We find that a value between 1 and 6 seems to give the best results. A value of -1 is theoretically a purely unconditional model.
+
+The number of inference timesteps controls how many diffusion steps the model will take while generating your Pokémon. A higher value will give higher-quality results but will take more time to compute.
+
+The model is an implementation of [iterative alpha-(de)blending](https://arxiv.org/pdf/2305.03486) to which I have added [Fourier features](https://github.com/tancik/fourier-feature-networks) and [classifier-free guidence](https://arxiv.org/abs/2207.12598). The model itself is implemented using the HuggingFace [Diffusers](https://huggingface.co/docs/diffusers/en/index) library.
+
+For more information about this model please visit the [GitHub Repo](https://github.com/KyroChi/pokemon-sprite-generator/tree/main).

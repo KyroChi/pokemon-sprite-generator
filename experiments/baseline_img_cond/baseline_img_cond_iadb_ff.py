@@ -113,15 +113,15 @@ class BaselineImageIADB(Experiment):
         )
 
         
-        # model_config = load_file('/home/kyle/projects/pokemon_diffusion/_testing_runs/baseline_img_cond_iadb_ff/2024-09-18_07-40-38/models/model_6500.pt/model.safetensors')
+        model_config = load_file('/home/kyle/projects/pokemon_diffusion/_testing_runs/baseline_img_cond_iadb_ff/2024-09-19_15-59-56/models/model_2580.pt/model.safetensors')
         # conv_in_weight = model_config['conv_in.weight']
         # randn_new_features = 0.001 * torch.ones(conv_in_weight.shape[0], 7, conv_in_weight.shape[2], conv_in_weight.shape[3])
         # model_config['conv_in.weight'] = torch.cat([conv_in_weight, randn_new_features], dim=1)
 
-        # self.model.load_state_dict(
-        #     model_config,
-        #     strict=False # Top layers of the encoder will be the wrong size
-        # )
+        self.model.load_state_dict(
+            model_config,
+            strict=False # Top layers of the encoder will be the wrong size
+        )
 
         # model_config = load_file('/home/kyle/projects/pokemon_diffusion/_testing_runs/baseline_img_cond_iadb_ff/2024-09-13_13-31-25/models/model_150.pt/model.safetensors')
 
@@ -191,7 +191,9 @@ class BaselineImageIADB(Experiment):
         mean = torch.full((self.config.ff_num_features, self.config.in_channels), 0.0)
         std = torch.full((self.config.ff_num_features, self.config.in_channels), self.config.ff_scale)
 
-        B = torch.normal(mean, std)
+        B = torch.load('/home/kyle/projects/pokemon_diffusion/_testing_runs/baseline_img_cond_iadb_ff/2024-09-19_15-59-56/B_tensor.pt')
+
+        # B = torch.normal(mean, std)
 
         torch.save(B, os.path.join(self.config.project_dir, "B_tensor.pt"))
 
@@ -285,7 +287,7 @@ if __name__ == "__main__":
         'train_batch_size': 32,
         'eval_batch_size': 16,
         'gradient_accumulation_steps': 1,
-        'learning_rate': 1e-4,
+        'learning_rate': 1e-4 / 10,
         'lr_warmup_steps': 200,
         'save_image_epochs': 20,
         'save_model_epochs': 20,

@@ -4,20 +4,19 @@ This project implements a conditional [iterative-$\alpha$ (de)blending](https://
 
 Additionally, the Pokémon dataset is relatively high-frequency; the edges are distinct from the body, transitions between colors are abrupt. Therefore I implemented [Fourier features](https://github.com/tancik/fourier-feature-networks) which I found to improve the output quality dramatically!
 
-I scraped the dataset from Bulbapedia and the Pokémon API. My dataset creation code can be found [here](https://github.com/KyroChi).
+I scraped the dataset from Bulbapedia and the Pokémon API. My dataset creation code can be found [here](https://github.com/KyroChi/pokemon-sprite-dataset).
 
 # Demo
 
 This project is hosted as a HuggingFace Space [here](). Below are static examples of Pokémon from the training set, and the outputs from my model.
 
+![sample outputs](/resources/sample_output.png)
 
-
-
-# Downloading and Using on your Machine
+# Downloading and Running on your Machine
 Clone the repo and run
 ```
 conda env create -f environment.yml 
-conda activate poke_sprite_dataset
+conda activate poke_sprite_generator
 ```
 to set up the conda environment. Next run
 ```

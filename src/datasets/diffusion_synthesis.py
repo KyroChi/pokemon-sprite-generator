@@ -7,26 +7,32 @@ from datasets import Dataset, Image
 from torchvision.transforms import Resize, ToTensor
 from typing import List
 
-TYPE_TO_INT_MAP = {
-    "normal": 0,
-    "fighting": 1,
-    "flying": 2,
-    "poison": 3,
-    "ground": 4,
-    "rock": 5,
-    "bug": 6,
-    "ghost": 7,
-    "steel": 8,
-    "fire": 9,
-    "water": 10,
-    "grass": 11,
-    "electric": 12,
-    "psychic": 13,
-    "ice": 14,
-    "dragon": 15,
-    "dark": 16,
-    "fairy": 17,
-}
+def reverse_dict(input_dict: dict):
+    output_dict = {}
+    for k, v in input_dict.items():
+        output_dict[v] = k
+    return output_dict
+
+# TYPE_TO_INT_MAP = {
+#     "normal": 0,
+#     "fighting": 1,
+#     "flying": 2,
+#     "poison": 3,
+#     "ground": 4,
+#     "rock": 5,
+#     "bug": 6,
+#     "ghost": 7,
+#     "steel": 8,
+#     "fire": 9,
+#     "water": 10,
+#     "grass": 11,
+#     "electric": 12,
+#     "psychic": 13,
+#     "ice": 14,
+#     "dragon": 15,
+#     "dark": 16,
+#     "fairy": 17,
+# }
 
 INT_TO_TYPE_MAP = {
     0: "normal",
@@ -49,18 +55,20 @@ INT_TO_TYPE_MAP = {
     17: "fairy",
 }
 
-COLOR_TO_INT_MAP = {
-    "black": 0,
-    "blue": 1,
-    "brown": 2,
-    "gray": 3,
-    "green": 4,
-    "pink": 5,
-    "purple": 6,
-    "red": 7,
-    "white": 8,
-    "yellow": 9,
-}
+TYPE_TO_INT_MAP = reverse_dict(INT_TO_TYPE_MAP)
+
+# COLOR_TO_INT_MAP = {
+#     "black": 0,
+#     "blue": 1,
+#     "brown": 2,
+#     "gray": 3,
+#     "green": 4,
+#     "pink": 5,
+#     "purple": 6,
+#     "red": 7,
+#     "white": 8,
+#     "yellow": 9,
+# }
 
 INT_TO_COLOR_MAP = {
     0: "black",
@@ -75,6 +83,27 @@ INT_TO_COLOR_MAP = {
     9: "yellow",
 }
 
+COLOR_TO_INT_MAP = reverse_dict(INT_TO_COLOR_MAP)
+
+INT_TO_SHAPE_MAP = {
+    0: "head",
+    1: "head and base",
+    2: "serpentine",
+    3: "head and legs",
+    4: "quadruped",
+    5: "tentacles",
+    6: "insectoid",
+    7: "head and arms",
+    8: "wings",
+    9: "bug wings",
+    10: "fins",
+    11: "bipedal",
+    12: "bipedal with tail",
+    13: "multiple_bodies"
+}
+
+SHAPE_TO_INT_MAP = reverse_dict(INT_TO_SHAPE_MAP)
+
 
 def type_to_int(type: str) -> int:
     return TYPE_TO_INT_MAP[type]
@@ -84,12 +113,20 @@ def int_to_type(int_type: int) -> str:
     return INT_TO_TYPE_MAP[int_type]
 
 
-def color_to_int(color):
+def color_to_int(color: str) -> int:
     return COLOR_TO_INT_MAP[color]
 
 
-def int_to_color(color):
+def int_to_color(color: int) -> str:
     return INT_TO_COLOR_MAP[color]
+
+
+def shape_to_int(shape: str) -> int:
+    return SHAPE_TO_INT_MAP[shape]
+
+
+def int_to_shape(shape: int) -> str:
+    return INT_TO_SHAPE_MAP[shape]
 
 
 def parse_sprite(sprite: str) -> tuple[bool, int]:
