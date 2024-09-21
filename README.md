@@ -1,14 +1,3 @@
----
-title: Pokémon Sprite Generator
-emoji: 🐸
-colorFrom: red
-colorTo: blue
-sdk: "gradio"
-sdk_version: "4.43.0"
-app_file: app.py
-pinned: false
----
-
 # Pokémon Sprite Generator
 
 This project implements a conditional [iterative-$\alpha$ (de)blending](https://arxiv.org/pdf/2305.03486) model to generate Pokémon sprites. The project will continue to be updated as I gain access to better GPUs for training. Currently the generated images have the correct art style but don't resolve qualitative aspects which would allow them to be easily identified as Pokémon.
