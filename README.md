@@ -1,6 +1,6 @@
 ---
 title: Pokémon Sprite Generator
-emoji: frog
+emoji: 🐸
 colorFrom: red
 colorTo: blue
 sdk: "gradio"
