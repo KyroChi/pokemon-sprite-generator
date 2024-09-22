@@ -20,9 +20,10 @@ conda activate poke_sprite_generator
 ```
 to set up the conda environment. Next run
 ```
+git-lfs pull
 python setup.py install
 ```
-to install the package for this codebase.
+to download the checkpoint files and install the package for this codebase.
 
 For inference you can now run
 ```
