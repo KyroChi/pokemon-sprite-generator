@@ -6,6 +6,5 @@ setup(
               'src.common', 
               'src.datasets',
               'src.experiment',
-              'src.metrics',
-              'src.models'],
+    ]
 )
